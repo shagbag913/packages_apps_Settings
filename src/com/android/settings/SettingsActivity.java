@@ -251,6 +251,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             return false;
         }
         mSearchFeatureProvider.setUpSearchMenu(menu, this);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
         return true;
     }
 

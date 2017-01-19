@@ -31,6 +31,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -420,12 +421,16 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     private void onBindTile(DashboardItemHolder holder, Tile tile) {
         holder.icon.setImageDrawable(mCache.getIcon(tile.icon));
         holder.title.setText(tile.title);
-        if (!TextUtils.isEmpty(tile.summary)) {
+        if (!TextUtils.isEmpty(tile.summary) && !mHideSummary) {
             holder.summary.setText(tile.summary);
             holder.summary.setVisibility(View.VISIBLE);
         } else {
             holder.summary.setVisibility(View.GONE);
         }
+        int minHeight = mContext.getResources().getDimensionPixelSize(mHideSummary ?
+                R.dimen.dashboard_category_height :
+                R.dimen.dashboard_tile_minimum_height);
+        holder.itemView.setMinimumHeight(minHeight);
     }
 
     private void onBindCategory(DashboardItemHolder holder, DashboardCategory category) {

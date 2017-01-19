@@ -78,15 +78,15 @@ public class DashboardSummary extends InstrumentedFragment
     private boolean isOnCategoriesChangedCalled;
     private SuggestionDismissController mSuggestionDismissHandler;
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.DASHBOARD_SUMMARY;
-    }
-    
     // omni additions start
     private int mNumColumns = 1;
     private SharedPreferences.OnSharedPreferenceChangeListener mAppPreferencesListener;
     private SharedPreferences mAppPreferences;
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.DASHBOARD_SUMMARY;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,7 +105,6 @@ public class DashboardSummary extends InstrumentedFragment
         mSuggestionParser = new SuggestionParser(activity,
                 activity.getSharedPreferences(SUGGESTIONS, 0), R.xml.suggestion_ordering);
         mSuggestionsChecks = new SuggestionsChecks(getContext());
-        
 
         mAppPreferencesListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
@@ -229,6 +228,7 @@ public class DashboardSummary extends InstrumentedFragment
         mDashboard.setItemAnimator(new DashboardItemAnimator());
         mSummaryLoader.setSummaryConsumer(mAdapter);
         ConditionAdapterUtils.addDismiss(mDashboard);
+        updateSettings();
         if (DEBUG_TIMING) {
             Log.d(TAG, "onViewCreated took "
                     + (System.currentTimeMillis() - startTime) + " ms");
