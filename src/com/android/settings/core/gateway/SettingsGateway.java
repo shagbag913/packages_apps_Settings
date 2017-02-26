@@ -128,6 +128,7 @@ import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
 import com.bootleggers.dumpster.MainDump;
+import com.gzr.wolvesden.fragments.OmniJawsSettings;
 
 public class SettingsGateway {
 
@@ -247,6 +248,7 @@ public class SettingsGateway {
             WebViewAppPicker.class.getName(),
             LockscreenDashboardFragment.class.getName(),
             MainDump.class.getName(),
+            OmniJawsSettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
