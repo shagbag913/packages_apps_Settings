@@ -236,6 +236,31 @@ public class DashboardSummary extends InstrumentedFragment
         }
     }
 
+    private void updateSettings() {
+        boolean hideSummary = mAppPreferences.getBoolean(SettingsActivity.KEY_HIDE_SUMMARY, false);
+        boolean hideSuggestions = mAppPreferences.getBoolean(SettingsActivity.KEY_HIDE_SUGGESTIONS, false);
+        int numColumns = mAppPreferences.getInt(SettingsActivity.KEY_COLUMNS_COUNT, 1);
+        boolean isLandscape = getResources().getConfiguration().orientation
+                == Configuration.ORIENTATION_LANDSCAPE;
+        // always show one column more in landscape
+        mNumColumns = isLandscape ? numColumns + 1 : numColumns;
+        mLayoutManager.setSpanCount(mNumColumns);
+        mAdapter.setNumColumns(mNumColumns);
+        mAdapter.setHideSummary(hideSummary);
+        if (mAdapter.setHideSuggestions(hideSuggestions) == true) {
+            // hideSuggestions changed, rebuild the UI
+            Log.d(TAG, "hideSuggestions changed, rebuildUI");
+            rebuildUI();
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        updateSettings();
+    }
+
     private class SuggestionLoader extends AsyncTask<Void, Void, List<Tile>> {
         @Override
         protected List<Tile> doInBackground(Void... params) {
