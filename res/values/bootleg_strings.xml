@@ -18,7 +18,7 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="bootlegdumpster_settings_activity">WolvesDen</string>
-    <string name="bootlegdumpster_settings_activity_summary">Additional project settings</string>
+    <string name="bootlegdumpster_settings_activity">Bootleg Dumpster</string>
+    <string name="bootlegdumpster_settings_activity_summary">Where the broken stuff is placed</string>
 
 </resources>
