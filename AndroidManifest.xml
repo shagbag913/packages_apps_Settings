@@ -160,11 +160,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
             </intent-filter>
-<<<<<<< HEAD
-            <intent-filter android:priority="11">
-=======
             <intent-filter android:priority="13">
->>>>>>> 6fa8585... Embed shortcut for root app on the dashboard
                 <action android:name="com.android.settings.action.SETTINGS"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -191,11 +187,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
             </intent-filter>
-<<<<<<< HEAD
-            <intent-filter android:priority="10">
-=======
             <intent-filter android:priority="12">
->>>>>>> 6fa8585... Embed shortcut for root app on the dashboard
                 <action android:name="com.android.settings.action.SETTINGS"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
@@ -2986,11 +2978,7 @@
         <activity android:name=".Settings$AppAndNotificationDashboardActivity"
                   android:label="@string/app_and_notification_dashboard_title"
                   android:icon="@drawable/ic_apps">
-<<<<<<< HEAD
-            <intent-filter android:priority="9">
-=======
             <intent-filter android:priority="11">
->>>>>>> 6fa8585... Embed shortcut for root app on the dashboard
                 <action android:name="com.android.settings.action.SETTINGS"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
