@@ -46,6 +46,8 @@ import android.text.TextUtils;
 import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -177,6 +179,7 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private SharedPreferences mDevelopmentPreferences;
     private SharedPreferences.OnSharedPreferenceChangeListener mDevelopmentPreferencesListener;
+    private SharedPreferences mAppPreferences;
 
     private boolean mBatteryPresent = true;
     private BroadcastReceiver mBatteryInfoReceiver = new BroadcastReceiver() {
@@ -306,6 +309,8 @@ public class SettingsActivity extends SettingsDrawerActivity
         }
 
         mDevelopmentPreferences = getSharedPreferences(DevelopmentSettings.PREF_FILE,
+                Context.MODE_PRIVATE);
+        mAppPreferences = getSharedPreferences(APP_PREFERENCES_NAME,
                 Context.MODE_PRIVATE);
 
         // Getting Intent properties can only be done after the super.onCreate(...)
