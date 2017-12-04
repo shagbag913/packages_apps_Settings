@@ -137,7 +137,7 @@ public class VolumeSteps extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.VALIDUS;
+        return MetricsEvent.BOOTLEG;
     }
 
     private SharedPreferences getDefaultStepsPrefs() {

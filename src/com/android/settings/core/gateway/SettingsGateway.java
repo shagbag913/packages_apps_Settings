@@ -128,7 +128,7 @@ import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
 import com.bootleggers.dumpster.MainDump;
-import com.gzr.wolvesden.fragments.OmniJawsSettings;
+import com.bootleggers.dumpster.external.OmniJawsSettings;
 
 public class SettingsGateway {
 
