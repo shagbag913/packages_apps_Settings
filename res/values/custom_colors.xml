@@ -28,4 +28,7 @@
     <!-- Device specific gesture package -->
     <string name="config_customGesturePackage" translatable="false"></string>
 
+    <!-- Searchbar overlays -->
+    <color name="searchBarBackgroundColor">?android:attr/colorBackground</color>
+
 </resources>
