@@ -31,4 +31,7 @@
     <!-- Searchbar overlays -->
     <color name="searchBarBackgroundColor">?android:attr/colorBackground</color>
 
+    <!-- Icon tint colors -->
+    <color name="dashboard_icon_tint">?android:attr/colorControlNormal</color>
+
 </resources>
