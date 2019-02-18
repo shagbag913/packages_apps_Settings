@@ -36,4 +36,10 @@
         android:shortcutShortLabel="@string/power_usage_summary_title" >
         <intent android:action="android.intent.action.POWER_USAGE_SUMMARY" />
     </shortcut>
+    <shortcut
+        android:shortcutId="manifest-shortcut-dumpster"
+        android:icon="@drawable/ic_shortcut_bootlegdump"
+        android:shortcutShortLabel="@string/bootleg_dumpster_title" >
+        <intent android:action="com.bootleggers.dumpster.MainDump" />
+    </shortcut>
 </shortcuts>
